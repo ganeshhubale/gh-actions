@@ -1,0 +1,27 @@
+name: Test GH action env variables
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-containers:
+    name: GH action ENV variables
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [1, 2, 3, 4]
+      fail-fast: false
+    steps:
+      - name: Set env variable value
+        id: varenv
+        run: echo "::set-output name=value::'Hello World'"
+      - name: Fetch env var
+        run: echo ${{steps.varenv.outputs.value}}
+      - name: Another way
+        run: echo "Url=https://github.com" >>$GITHUB_ENV
+      - name: Fetch value of Url env var
+        run: echo ${{env.Url}}
