@@ -1,0 +1,14 @@
+name: Test cron working
+
+on:
+  schedule:
+      # At every 2nd minute
+    - cron: '*/2 * * * *'
+
+jobs:
+  test-containers:
+    name: cron job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use echo command
+        run: echo "Test cron"
