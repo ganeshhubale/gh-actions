@@ -34,4 +34,3 @@ jobs:
           user: __token__
           password: ${{ secrets.test_pypi_token }}   # create pypi token and put in project secret
           repository_url: https://test.pypi.org/legacy/
-
