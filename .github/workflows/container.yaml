@@ -1,0 +1,20 @@
+name: Test container working
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test-containers:
+    name: GH action containers
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [1, 2, 3, 4]
+      fail-fast: false
+    steps:
+      - name: Use echo command
+        run: echo "Hello Wrold!"
