@@ -1,9 +1,9 @@
 name: Test cron working
 
 on:
-  schedule:
-      # At every 2nd minute
-    - cron: '*/2 * * * *'
+#   schedule:
+#       # At every 2nd minute
+#     - cron: '* * * * *'
 
 jobs:
   test-containers:
