@@ -1,0 +1,32 @@
+name: Run multiple jobs
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  job1:
+    name: First Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        run: echo "Hello world from job 1"
+
+  job2:
+    name: Second Job
+    runs-on: ubuntu-latest
+   
+    steps:
+      - name: Checkout
+        run: echo "Hello world from job 2"
+
+  job3:
+    name: Third Job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        run: echo "Hello world from job 3"
